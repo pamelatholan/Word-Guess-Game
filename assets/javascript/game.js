@@ -26,20 +26,55 @@ function newGame (){
         numBlanks = wordLetters.length;
         // console.log("Number of letters in word: " + numBlanks);
 
+// Reset game variables - cleared before each new game
     guessesLeft = 13;
     wrongLetters = [];
     answerDisplay = [];
 
-    // Converts all key clicks to lowercase letters.
+// Converts all key clicks to lowercase letters.
   letterGuessed = String.fromCharCode(event.which).toLowerCase();
 
+// Add number of blanks equal to length of current word
     for (i = 0; i < numBlanks; i++) {
         answerDisplay.push("_");
         // console.log(answerDisplay);
     }
 
+// Change HTML elements to display information
     document.getElementById("theWord").innerHTML = answerDisplay.join("");
     document.getElementById("remGuesses").innerHTML = "Number of guesses remaining: " + " " + guessesLeft;
     document.getElementById("wins").innerHTML = "Wins: " + " " + wins;
-}
+
+// Check if input is actually a letter
+    checkLtrs(letter);
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            var correctLetter = false;
+
+            for (var i = 0; i < numBlanks; i++) {
+                if(currentWord[i] == letter) {
+                    correctLetter = true;
+                }
+            }
+            if(correctLetter) {
+                for (var i = 0; i < numBlanks; i++) {
+                    if(currentWord[i] == letter) {
+                        answerDisplay[i] = letter;
+                    }
+                }
+            }
+        else {
+            wrongLetters.push(letter);
+            guessesLeft--
+        }
+        // console.log(answerDisplay);
+        }
+        }
+    function roundComplete() {
+        //Update HTML with Game Stats
+		document.getElementById("remGuesses").innerHTML = "Number of Guesses Remaining: " + " " + guessesLeft;
+		document.getElementById("theWord").innerHTML = answerDisplay.join(" ");
+		document.getElementById("guessedLetters").innerHTML = "Letters Already Guessed:" + " " + wrongLetters.join(" ");
+    }
+    
+
 
