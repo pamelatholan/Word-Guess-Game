@@ -19,7 +19,7 @@ body {
   
   #resultTextChange {
     font-family: 'Creepster';font-size: 22px;
-    margin-left: 250px;
+    text-align: center;
     font-size: 30px;
     color: greenyellow;
   }
@@ -34,7 +34,7 @@ body {
   
   .leftGrid {
     float: left;
-    margin-left: 200px;
+    margin-left: 150px;
   }
   
   #skull {
