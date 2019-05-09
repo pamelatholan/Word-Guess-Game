@@ -1,80 +1,182 @@
-//Word Bank Array
-var movies = ["nosferatu", "dracula", "the howling", "pet semetary", "the shining"];
-// Empy variable for storing word to be guessed
-var currentWord = "";
-//Variable for current word letters
-var wordLetters = [];
-//Variable for number of blanks in current word
-var numBlanks = 0;
-//Empty array for disply to user playing game
-var answerDisplay = [];
-//Empty array for all wrong guesses
-var wrongLetters = [];
-
-//Game Stats
+//Initial Variables
 var wins = 0;
-var guessesLeft = 0;
+var guessesRemaining = 13;
+var gameFinished = false;
 
-//Function to start new game
-function newGame (){
-    currentWord = movies[Math.floor(Math.random() * movies.length)];
-        // console.log("The current word is: " + currentWord);
+//Computer Choices
+var wordArray = ["nosferatu", "dracula", "the howling", "pet semetary", "the shining", "halloween", "hellraiser"];
+var wordChoice = wordArray[Math.floor(Math.random() * wordArray.length)];
+console.log(wordChoice);
 
-        wordLetters = currentWord.split("");
-        // console.log("The current word's letters are: " + wordLetters);
+var alreadyGuessed = [];
 
-        numBlanks = wordLetters.length;
-        // console.log("Number of letters in word: " + numBlanks);
+guessesRemainingFunction();
 
-// Reset game variables - cleared before each new game
-    guessesLeft = 13;
-    wrongLetters = [];
-    answerDisplay = [];
+//Press key to begin
+document.onkeypress = function(event) {
+    var userGuess = event.key;
+    userGuess = userGuess.toLowerCase();
+    wordCheck(userGuess);
+    drawPlaySpace();
+};
 
-// Converts all key clicks to lowercase letters.
-  letterGuessed = String.fromCharCode(event.which).toLowerCase();
-
-// Add number of blanks equal to length of current word
-    for (i = 0; i < numBlanks; i++) {
-        answerDisplay.push("_");
-        // console.log(answerDisplay);
+//Check guess against word, win or lose, letter verification
+function wordCheck(userGuess) {
+    if (gameFinished === true) {
+      resetFunction();
+      return;
     }
-
-// Change HTML elements to display information
-    document.getElementById("theWord").innerHTML = answerDisplay.join("");
-    document.getElementById("remGuesses").innerHTML = "Number of guesses remaining: " + " " + guessesLeft;
-    document.getElementById("wins").innerHTML = "Wins: " + " " + wins;
-
-// Check if input is actually a letter
-    checkLtrs(letter);
-        if (event.keyCode >= 65 && event.keyCode <= 90) {
-            var correctLetter = false;
-
-            for (var i = 0; i < numBlanks; i++) {
-                if(currentWord[i] == letter) {
-                    correctLetter = true;
-                }
-            }
-            if(correctLetter) {
-                for (var i = 0; i < numBlanks; i++) {
-                    if(currentWord[i] == letter) {
-                        answerDisplay[i] = letter;
-                    }
-                }
-            }
-        else {
-            wrongLetters.push(letter);
-            guessesLeft--
-        }
-        // console.log(answerDisplay);
-        }
-        }
-    function roundComplete() {
-        //Update HTML with Game Stats
-		document.getElementById("remGuesses").innerHTML = "Number of Guesses Remaining: " + " " + guessesLeft;
-		document.getElementById("theWord").innerHTML = answerDisplay.join(" ");
-		document.getElementById("guessedLetters").innerHTML = "Letters Already Guessed:" + " " + wrongLetters.join(" ");
+    var isItLetter = false;
+    var alphabetArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    for (i = 0; i < alphabetArray.length; i++) {
+      if (userGuess === alphabetArray[i]) {
+        isItLetter = true;
+      }
     }
-    
+    if (isItLetter === false) {
+      alert("I'm having a crap attack! That wasn't a letter!");
+      return;
+    }
+    var doesItMatch = false;
+      for (i = 0; i < wordChoice.length; i++) {
+        if (userGuess === wordChoice[i]) {
+          doesItMatch = true;
+          playSpace[i] = userGuess;
+        }
+      }
+      var didWeWin = true;
+        for (i = 0; i < wordChoice.length; i++) {
+          if (playSpace[i] != wordChoice[i]) {
+            didWeWin = false;
+          }
+        }
+        if (didWeWin === true) {
+          winnerFunction();
+          return;
+        }
+      for (i = 0; i < alreadyGuessed.length; i++) {
+        if (userGuess === alreadyGuessed[i]) {
+          return;
+        }
+      }
+      if (!doesItMatch) {
+       guessesRemaining--;
+       guessesRemainingFunction();
+       alreadyGuessed.push(userGuess);
+       alreadyGuessedFunction();
+     }
+     if (guessesRemaining === 0) {
+       loserFunction();
+       return;
+     }
+    }
+  
+    function alreadyGuessedFunction() {
+      document.getElementById("already-guessed").innerHTML = alreadyGuessed;
+    }
+  
+    function guessesRemainingFunction() {
+      document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
+    }
+  
+    document.getElementById("current-word").innerHTML = playSpace;
 
+//Underscores and spaces between underscores
+    function drawBlanks() {
+    var underscoreArray = [];
+    for (i = 0; i < wordChoice.length; i++) {
+      underscoreArray.push("_");
+    }
+    return underscoreArray;
+  }
+  
+    var playSpace = drawBlanks();
+  
+    function drawPlaySpace() {
+    for (i = 0; i < playSpace.length; i++) {
+      document.getElementById("current-word").innerHTML = playSpace.join(" ");
+    }
+  }
+  
+   drawPlaySpace();
+
+// Win, Loss, Reset
+function winnerFunction() {
+    switch (wordChoice) {
+      case "dracula":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("dracula").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "The blood is the life!";
+      break;
+      case "halloween":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("halloween").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "It was the Boogeyman!";
+      break;
+      case "hellraiser":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("hellraiser").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "You solved the box, we came. Now you must come with us, taste our pleasures.";
+      break;
+      case "nosferatu":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("nosferatu").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "Sunrise is far away and during the day I have to sleep, my friend.";
+      break;
+      case "petsemetary":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("petsemetary").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "Sometimes dead is better.";
+      break;
+      case "thehowling":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("thehowling").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "We should never try to deny the beast - the animal within us.";
+      break;
+      case "theshining":
+      document.getElementById("skull").style.visibility = "hidden";
+      document.getElementById("theshining").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "Heeere’s Johnny!";
+      break;
+    }
+    wins++;
+    winsFunction();
+  }
+ 
+  function winsFunction() {
+    document.getElementById("total-wins").innerHTML = wins;
+    gameFinished = true;
+  }
+ 
+  function loserFunction() {
+    if (guessesRemaining === 0) {
+     document.getElementById("skull").style.visibility = "hidden";
+     document.getElementById("unsolved").style.visibility = "visible";
+     document.getElementById("resultTextChange").innerHTML = "You Lost! Try again!";
+     audio8.play();
+     audio8.volume = 0.05;
+     gameFinished = true;
+     }
+  }
+ 
+  function resetFunction() {
+    document.getElementById("skull").style.visibility = "visible";
+    document.getElementById("unsolved").style.visibility = "hidden";
+    document.getElementById("resultTextChange").innerHTML = "";
+    document.getElementById("dracula").style.visibility = "hidden";
+    document.getElementById("halloween").style.visibility = "hidden";
+    document.getElementById("hellraiser").style.visibility = "hidden";
+    document.getElementById("nosferatu").style.visibility = "hidden";
+    document.getElementById("petsemetary").style.visibility = "hidden";
+    document.getElementById("thehowling").style.visibility = "hidden";
+    document.getElementById("theshining").style.visibility = "hidden";
+    alreadyGuessed.length = 0;
+    alreadyGuessedFunction();
+    guessesRemaining = 13;
+    guessesRemainingFunction();
+    wordChoice = wordArray[Math.floor(Math.random() * wordArray.length)];
+    console.log(wordChoice);
+    playSpace = drawBlanks();
+    gameFinished = false;
+  }   
 
