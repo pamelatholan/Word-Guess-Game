@@ -55,7 +55,8 @@ body {
   }
   
   #dracula {
-    
+    margin-bottom: -170px;
+    margin-left: 125px; 
   }
   
   #halloween {
@@ -71,20 +72,25 @@ body {
   }
   
   #nosferatu {
-    
+    margin-bottom: -150px;
+    margin-left: 125px;
     
   }
   
-  #petsemetary {
-   
+  #psycho {
+    margin-bottom: -100px;
+    margin-left: 125px;
   }
   
-  #thehowling {
+  #poltergeist {
+    margin-bottom: -100px;
+    margin-left: 110px;
     
   }
 
-  #theshining {
-    
+  #alien {
+    margin-bottom: -100px;
+    margin-left: 125px;
   }
 
   #unsolved {

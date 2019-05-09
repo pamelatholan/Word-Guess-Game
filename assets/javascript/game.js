@@ -4,7 +4,7 @@ var guessesRemaining = 13;
 var gameFinished = false;
 
 //Computer Choices
-var wordArray = ["nosferatu", "dracula", "the howling", "pet semetary", "the shining", "halloween", "hellraiser"];
+var wordArray = ["nosferatu", "dracula", "poltergeist", "psycho", "alien", "halloween", "hellraiser"];
 var wordChoice = wordArray[Math.floor(Math.random() * wordArray.length)];
 console.log(wordChoice);
 
@@ -123,20 +123,20 @@ function winnerFunction() {
       document.getElementById("nosferatu").style.visibility = "visible";
       document.getElementById("resultTextChange").innerHTML = "Sunrise is far away and during the day I have to sleep, my friend.";
       break;
-      case "petsemetary":
+      case "psycho":
       document.getElementById("skull").style.visibility = "hidden";
-      document.getElementById("petsemetary").style.visibility = "visible";
-      document.getElementById("resultTextChange").innerHTML = "Sometimes dead is better.";
+      document.getElementById("psycho").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "A boy's best friend is his mother.";
       break;
-      case "thehowling":
+      case "poltergeist":
       document.getElementById("skull").style.visibility = "hidden";
-      document.getElementById("thehowling").style.visibility = "visible";
-      document.getElementById("resultTextChange").innerHTML = "We should never try to deny the beast - the animal within us.";
+      document.getElementById("poltergeist").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "They're here.";
       break;
-      case "theshining":
+      case "alien":
       document.getElementById("skull").style.visibility = "hidden";
-      document.getElementById("theshining").style.visibility = "visible";
-      document.getElementById("resultTextChange").innerHTML = "Heeere’s Johnny!";
+      document.getElementById("alien").style.visibility = "visible";
+      document.getElementById("resultTextChange").innerHTML = "This is Ripley, last survivor of the Nostromo, signing off.";
       break;
     }
     wins++;
@@ -167,9 +167,9 @@ function winnerFunction() {
     document.getElementById("halloween").style.visibility = "hidden";
     document.getElementById("hellraiser").style.visibility = "hidden";
     document.getElementById("nosferatu").style.visibility = "hidden";
-    document.getElementById("petsemetary").style.visibility = "hidden";
-    document.getElementById("thehowling").style.visibility = "hidden";
-    document.getElementById("theshining").style.visibility = "hidden";
+    document.getElementById("psycho").style.visibility = "hidden";
+    document.getElementById("poltergeist").style.visibility = "hidden";
+    document.getElementById("alien").style.visibility = "hidden";
     alreadyGuessed.length = 0;
     alreadyGuessedFunction();
     guessesRemaining = 13;
