@@ -59,14 +59,19 @@ body {
   }
   
   #halloween {
+    margin-bottom: -150px;
+    margin-left: 125px;
     
   }
   
   #hellraiser {
-    
+    margin-bottom: -150px;
+    margin-left: 125px;
+     
   }
   
   #nosferatu {
+    
     
   }
   
@@ -80,6 +85,10 @@ body {
 
   #theshining {
     
+  }
+
+  #unsolved {
+    margin-left: 125px;
   }
   
   .rightGrid {

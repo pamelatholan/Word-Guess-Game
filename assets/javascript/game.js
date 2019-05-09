@@ -34,7 +34,7 @@ function wordCheck(userGuess) {
       }
     }
     if (isItLetter === false) {
-      alert("I'm having a crap attack! That wasn't a letter!");
+      alert("That wasn't a letter!");
       return;
     }
     var doesItMatch = false;
