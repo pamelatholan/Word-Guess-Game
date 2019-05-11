@@ -153,8 +153,6 @@ function winnerFunction() {
      document.getElementById("skull").style.visibility = "hidden";
      document.getElementById("unsolved").style.visibility = "visible";
      document.getElementById("resultTextChange").innerHTML = "You Lost! Try again!";
-     audio8.play();
-     audio8.volume = 0.05;
      gameFinished = true;
      }
   }
