@@ -2,7 +2,7 @@
 ## HW 3
 # Horror Movie Hangman
 
-![Horror Movie Hangman](assets/images/WordGuessGame)
+![Horror Movie Hangman](./assets/images/WordGuessGame)
 
 * Choose a theme for your game!
 
@@ -23,4 +23,6 @@
 
 * Used Javascript learned in class and independent learning done on Codecademy to create project.
 
-### Redid project using Bootstrap for a cleaner playing area that could scale more easily.  Added media queries for mobile responsiveness.  CSS styling cleaned up with the addition of bootstrap as images didn't need as much manipulation to populate in the playing area.
+#### Redid project using Bootstrap for a cleaner playing area that could scale more easily.  
+#### Added media queries for mobile responsiveness.  
+#### CSS styling cleaned up with the addition of bootstrap as images didn't need as much manipulation to populate in the playing area.
