@@ -1,6 +1,5 @@
 ## Word Guess Game
 ## HW 3
-# Horror Movie Hangman
 
 ![Horror Movie Hangman](https://github.com/pamelatholan/Word-Guess-Game/blob/master/assets/images/WordGuessGame.PNG)
 
