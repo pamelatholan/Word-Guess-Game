@@ -2,18 +2,11 @@ body {
     background-color: black;
   }
   
-  #header {
-    width: 900px;
-    height: 200px;
-    margin-left: 400px;
-    visibility: hidden;
-  }
-  
   #hangmanTitle {
     margin-top: 0;
     text-align: center;
     margin-bottom: 40px;
-    font-family: 'Creepster';font-size: 150px;
+    font-family: 'Creepster';font-size: 125px;
     color: white;
   }
   
