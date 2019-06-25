@@ -5,8 +5,10 @@
 
 * Choose a theme for your game!
 
-    * I incorporated a movie poster and movie quote to populate when word is guessed correctly.  
+    * I incorporated a movie poster and movie quote to populate when word is guessed correctly. 
+    ![Win](https://github.com/pamelatholan/Word-Guess-Game/blob/master/assets/images/win.PNG) 
     * A meme and "You Lost! Try Again!" populate if the word is guessed incorrectly.
+    ![Lose](https://github.com/pamelatholan/Word-Guess-Game/blob/master/assets/images/lose.PNG)
     * If something other than a letter is pressed, an alert pops up.
 
 * Display the following on the page:
