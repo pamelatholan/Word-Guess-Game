@@ -2,7 +2,7 @@
 ## HW 3
 # Horror Movie Hangman
 
-![Horror Movie Hangman](./assets/images/WordGuessGame)
+![Horror Movie Hangman](/assets/images/WordGuessGame.png)
 
 * Choose a theme for your game!
 
