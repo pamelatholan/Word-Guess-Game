@@ -1,6 +1,14 @@
-### Word Guess Game
-### HW 3
+## Word Guess Game
+## HW 3
+# Horror Movie Hangman
+
+![Horror Movie Hangman](/assets/images/WordGuessGame)
+
 * Choose a theme for your game!
+
+    * I incorporated a movie poster and movie quote to populate when word is guessed correctly.  
+    * A meme and "You Lost! Try Again!" populate if the word is guessed incorrectly.
+    * If something other than a letter is pressed, an alert pops up.
 
 * Display the following on the page:
     * Press any key to get started!
@@ -11,4 +19,8 @@
 
 * After the user wins/loses the game should automatically choose another word and make the user play it.
 
-### Used Javascript learned in class and independant learning done on Codecademy to create project.
+
+
+* Used Javascript learned in class and independent learning done on Codecademy to create project.
+
+# Redid project using Bootstrap for a cleaner playing area that could scale more easily.  Added media queries for mobile responsiveness.  CSS styling cleaned up with the addition of bootstrap as images didn't need as much manipulation to populate in the playing area.

@@ -1,103 +1,88 @@
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Creepster';font-size: 125px;
+}
+
 body {
     background-color: black;
-  }
-  
-  #hangmanTitle {
-    margin-top: 0;
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Creepster';font-size: 125px;
+}
+
+#container {
+border-style: dotted;
+border-color: red;
+text-align: center;
+}
+
+#play {
+    border-left-style: dotted;
+    border-color: red;
     color: white;
-  }
-  
-  #resultTextChange {
-    font-family: 'Creepster';font-size: 22px;
-    text-align: center;
-    font-size: 30px;
-    color: greenyellow;
-  }
-  
-  .fullGrid {
-    height: 750px;
-    width: 600px;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    border: 5px dotted red;
-  }
-  
-  .leftGrid {
-    float: left;
-    margin-left: 150px;
-  }
-  
-  #skull {
-    height: 350px;
-    width: 260px;
-    margin-top: 100px;
-    margin-left: 180px;
-  }
-  
-  .answerImage {
+    font-family: 'Creepster';
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.answerImage {
     width: 350px;
     margin-left: 50px;
     margin-top: -800px;
     padding-bottom: 100px;
     visibility: hidden;
   }
-  
-  #dracula {
-    margin-bottom: -170px;
-    margin-left: 125px; 
-  }
-  
-  #halloween {
-    margin-bottom: -150px;
-    margin-left: 125px;
-    
-  }
-  
-  #hellraiser {
-    margin-bottom: -150px;
-    margin-left: 125px;
-     
-  }
-  
-  #nosferatu {
-    margin-bottom: -150px;
-    margin-left: 125px;
-    
-  }
-  
-  #psycho {
-    margin-bottom: -100px;
-    margin-left: 125px;
-  }
-  
-  #poltergeist {
-    margin-bottom: -100px;
-    margin-left: 110px;
-    
-  }
 
-  #alien {
-    margin-bottom: -100px;
-    margin-left: 125px;
-  }
-
-  #unsolved {
-    margin-left: 125px;
-  }
-  
-  .rightGrid {
-    float: left;
-    border-left: none;
-    margin-left: 5px;
-  }
-  
-  .gridText {
-    font-family: 'Creepster';font-size: 22px;
+  #resultTextChange {
+    font-family: 'Creepster';
     text-align: center;
-    font-size: 25px;
-    line-height: 60px;
-    color: white;
+    font-size: 30px;
+    color: greenyellow;
   }
+
+#skull {
+    text-align: center;
+    margin-top: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Creepster';font-size: 50px;
+    }
+
+    #container {
+        border-style: dotted;
+        border-color: red;
+        text-align: center;
+        width: 100%;
+        }
+        #play {
+            border-left-style: dotted;
+            border-color: red;
+            color: white;
+            font-family: 'Creepster';
+            font-size: 12px;
+            line-height: 20px;
+        } 
+        .answerImage {
+            width: 100%;
+            margin-left: 50px;
+            margin-top: -800px;
+            padding-bottom: 100px;
+            visibility: hidden;
+          }
+        
+          #resultTextChange {
+            font-family: 'Creepster';
+            text-align: center;
+            font-size: 18px;
+            color: greenyellow;
+          }
+        
+        #skull {
+            text-align: center;
+            margin-top: 150px;
+        }
+        
+
+}

@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
-    <title>Word Guess Game</title>
+
+    <title>Horror Movie Hangman</title>
 </head>
 <body>
+    <h1>Horror Movie Hangman</h1>
     
-    <div class="header">
-      <div id="hangmanTitle">Horror Movie Hangman</div>
-      </div>
-      <div class="resultText">
-        <p id="resultTextChange"></p>
-      </div>
-      <div class="leftGrid fullGrid" id="image-place">
-        <img src="./assets/images/startimage.jpg" alt="skull and candle" id="skull">
-        <img src="./assets/images/unsolved.jpg" alt="Freddy and Jason" id="unsolved"  class="answerImage">
-        <img src="./assets/images/dracula.jpg" alt="Dracula" id="dracula" class="answerImage">
-        <img src="./assets/images/halloween.jpg" alt="Halloween " id="halloween"  class="answerImage">
-        <img src="./assets/images/hellraiser.jpg" alt="Hellraiser" id="hellraiser" class="answerImage">
-        <img src="./assets/images/nosferatu.jpg" alt="Nosferatu" id="nosferatu" class="answerImage">
-        <img src="./assets/images/poltergeist.jpg" alt="Poltergeist" id="poltergeist" class="answerImage">
-        <img src="./assets/images/psycho.jpg" alt="Psycho" id="psycho" class="answerImage">
-        <img src="./assets/images/alien.jpg" alt="Alien" id="alien" class="answerImage">
-      </div>
-      <div class="rightGrid fullGrid">
-        <div class="gridText">
-          <p>Press Any Key to Begin!</p>
-          <p>Wins</p>
-          <p id="total-wins">0</p>
-          <p>Current Word</p>
-          <p id="current-word"></p>
-          <p>Number of Guesses Remaining</p>
-          <p id="guesses-remaining"></p>
-          <p>Letters Already Guessed</p>
-          <p id="already-guessed"></p>
-        </div>
-      </div>
-  <script src="./assets/javascript/game.js"></script>    
-  
-</body>
+    <div class="resultText">
+            <p id="resultTextChange"></p>
+          </div>
+        <div class="container" id="container">
+                <div class="row">
+                  <div class="col">
+                        <img src="./assets/images/startimage.jpg" alt="skull and candle" id="skull" style="width: 300px; height:500px;">
+                        <img src="./assets/images/unsolved.jpg" alt="Freddy and Jason" id="unsolved"  class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/dracula.jpg" alt="Dracula" id="dracula" class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/halloween.jpg" alt="Halloween " id="halloween"  class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/hellraiser.jpg" alt="Hellraiser" id="hellraiser" class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/nosferatu.jpg" alt="Nosferatu" id="nosferatu" class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/poltergeist.jpg" alt="Poltergeist" id="poltergeist" class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/psycho.jpg" alt="Psycho" id="psycho" class="answerImage" style="width: 300px; height:500px;">
+                        <img src="./assets/images/alien.jpg" alt="Alien" id="alien" class="answerImage" style="width: 300px; height:500px;">
+                                  </div>
+                  <div class="col" id="play">
+                        <p>Press Any Key to Begin!</p>
+                        <p>Wins</p>
+                        <p id="total-wins">0</p>
+                        <p>Current Word</p>
+                        <p id="current-word"></p>
+                        <p>Number of Guesses Remaining</p>
+                        <p id="guesses-remaining"></p>
+                        <p>Letters Already Guessed</p>
+                        <p id="already-guessed"></p>
+                                </div>
+                </div>
+                <script src="./assets/javascript/game.js"></script>    
+            </body>
 </html>
