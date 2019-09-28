@@ -178,3 +178,34 @@ function winnerFunction() {
     gameFinished = false;
   }   
 
+
+// KEYBOARD //
+
+(function() {
+   'use strict';
+   var i,c;
+function init(){ 
+   i=document.getElementById('keyboard').getElementsByTagName('input');
+for(c=0;c<i.length;c++) {
+if(i[c].type==='button') {
+   i[c].addEventListener('onclick',makeClickHandler(c));
+   }
+  }
+
+document.getElementById('clear').onclick=function() {
+   document.getElementById('text').value='';
+  }
+ }
+
+function makeClickHandler(c) {
+   i[c].onclick=function() {
+    //  console.log(this.value.toLowerCase())
+     wordCheck(this.value.toLowerCase());
+     drawPlaySpace();
+  };
+ }
+
+   window.addEventListener?
+   window.addEventListener('load',init,false):
+   window.attachEvent('onload',init);
+})();
