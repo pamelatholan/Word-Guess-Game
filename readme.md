@@ -29,4 +29,4 @@
 #### Added media queries for mobile responsiveness.  
 #### CSS styling cleaned up with the addition of bootstrap as images didn't need as much manipulation to populate in the playing area.
 #### Added on screen keyboard to allow for game play on tablets and mobile phones.
-![Keyboard]()
+![Keyboard](https://github.com/pamelatholan/Word-Guess-Game/blob/master/assets/images/keyboard.PNG)
