@@ -2,7 +2,7 @@
 
 Deployed on [GitHub Pages](https://pamelatholan.github.io/Word-Guess-Game/)
 
-A horror movie themed hangman style word guess game.  Guess letters correctly to win.
+#### A horror movie themed hangman style word guess game.  Guess letters correctly to win.
 
 ### Game Play:
 * Press any key to get started!
