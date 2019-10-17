@@ -1,5 +1,7 @@
 # Word Guess Game
 
+![Hangman](https://github.com/pamelatholan/Word-Guess-Game/blob/master/assets/images/keyboard.PNG)
+
 Deployed on [GitHub Pages](https://pamelatholan.github.io/Word-Guess-Game/)
 
 #### A horror movie themed hangman style word guess game.  Guess letters correctly to win.
